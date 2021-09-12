@@ -1,5 +1,6 @@
 void setup() {
   size(450, 450);
+  
   telTotGetal(100);
   vermenigvuldiger(0.5, 3, 2, 1);
   tekenPixelArt(110);
