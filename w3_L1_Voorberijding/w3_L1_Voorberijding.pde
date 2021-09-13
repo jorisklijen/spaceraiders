@@ -3,7 +3,7 @@ void setup() {
   
   telTotGetal(100);
   vermenigvuldiger(0.5, 3, 2, 1);
-  tekenPixelArt(110);
+  tekenPixelArt(150);
 }
 
 //tellen tot 100 oprdacht
