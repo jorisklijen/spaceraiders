@@ -3,9 +3,9 @@
  */
 
 void setup() {
-  size(400, 200);
-  background(kleurVeranderingen(-4, -2));
-  tekenVierkant();
+  size(400, 400);
+  background(kleurVeranderingen(0, 0));
+  //tekenVierkant();
 }
 
 //Algoritme met condities implementeren
@@ -31,20 +31,20 @@ int kleurVeranderingen(int aantal, int refAantal) {
 
 //Vierkantjes, vierkantjes
 //Niet gelukt om in t midden te krijgen, graag in de les aandacht aan geven.
-final int ZIJDE = 15;
-final int AANTAL = 15;
+//final int ZIJDE = 15;
+//final int AANTAL = 15;
 
-void tekenRow(int y) {
-  for (int i = 0; i < AANTAL; i++) {
-    rect(ZIJDE * i, y, ZIJDE, ZIJDE);
-    if (width <= ZIJDE * i || height <= ZIJDE * i) {
-      println("past niet");
-    }
-  }
-}
+//void tekenRow(int y) {
+//  for (int i = 0; i < AANTAL; i++) {
+//    rect(ZIJDE * i, y, ZIJDE, ZIJDE);
+//    if (width <= ZIJDE * i || height <= ZIJDE * i) {
+//      println("past niet");
+//    }
+//  }
+//}
 
-void tekenVierkant() {
-  for (int i = 0; i < AANTAL; i++) {
-    tekenRow(ZIJDE * i);
-  }
-}
+//void tekenVierkant() {
+//  for (int i = 0; i < AANTAL; i++) {
+//    tekenRow(ZIJDE * i);
+//  }
+//}
