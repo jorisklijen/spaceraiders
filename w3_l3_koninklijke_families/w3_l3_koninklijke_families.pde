@@ -6,12 +6,16 @@ int jongens = 0;
 
 void setup() {
   size(400, 900);
-  imgM = loadImage("m.png");
-  imgV = loadImage("v.png");
   background(0);
+  laad();
   tekenGeneraties(5, 0, 0, 50, 90);
   tekenUitslag(150);
   printUitslag();
+}
+
+void laad(){
+  imgM = loadImage("m.png");
+  imgV = loadImage("v.png");
 }
 
 void tekenGeneraties(int aantal, int x, int y, int breete, int hoogte){
