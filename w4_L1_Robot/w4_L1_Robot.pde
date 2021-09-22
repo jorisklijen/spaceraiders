@@ -26,7 +26,6 @@ void draw() {
   tekenRobot(xRobot, yRobot, schaal, GROEN);
 }
 
-
 void tekenLevel(int groote) {
   int yOffSet = 0;
   for (int i = 0; i < speelVeld.length; i++) {
