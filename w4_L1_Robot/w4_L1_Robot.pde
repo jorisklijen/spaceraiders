@@ -1,4 +1,4 @@
-// Constrain nee niet zinvol
+// Constrain nee niet zinvol //<>// //<>//
 
 final int ROOD  = #ff0000;
 final int GROEN = #48F56E;
@@ -12,21 +12,8 @@ int goal = 2;
 
 int schaal = 100;
 
-int xRobot = 200; 
-int yRobot = 300;
-
-boolean isMuur = false;
-
-int[][] speelVeld = {
-  {wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall}, 
-  {wall, air , wall, air , air , air , air , air , air , air , air , air , air , wall},
-  {wall, air , wall, air , air , wall, wall, wall, wall, wall, air , wall, wall, wall},
-  {wall, air , air , air , air , wall, air , air , air , air , air , air , air , wall},
-  {wall, air , wall, wall, air , wall, wall, wall, wall, air , wall, wall, air , wall},
-  {wall, air , air , wall, air , air , air , air , air , air , air , wall, air , wall},
-  {wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, goal, wall},
-};
-
+int xRobot = 400; 
+int yRobot = 200;
 
 void setup() {
   frameRate(60);
@@ -35,13 +22,10 @@ void setup() {
   tekenLevel(schaal);
 }
 
-void draw(){
+void draw() {
   tekenRobot(xRobot, yRobot, schaal, GROEN);
 }
 
-void keyPressed(){
-  beweegRobot();
-}
 
 void tekenLevel(int groote) {
   int yOffSet = 0;
@@ -73,44 +57,44 @@ void tekenVierkantLevel(int x, int y, int groote, int kleur) {
   rect(x, y, groote, groote);
 }
 
-void beweegRobot(){
-  for(int rij = 0; rij < speelVeld.length; rij++){
-    for(int colom = 0; colom < speelVeld[rij].length; colom++){
-      if (speelVeld[rij][colom] != wall){ //<>//
-        if ((rij * schaal != yRobot )&& keyCode == UP){
-          yRobot -= schaal;
-        } //<>//
-      }
-    }
-  }
-  
-  
-  switch (keyCode) {
-    case(UP):
-   // yRobot -= schaal;
-    break;
-    case(DOWN):
-    yRobot += schaal;
-    break;
-    case(LEFT):
-    xRobot -= schaal;
-    break;
-    case(RIGHT):
-    xRobot += schaal;
-    break;
-  }
+int[][] speelVeld = {
+  {wall, wall, wall, wall, air , wall, wall, wall, wall, wall, wall, wall, wall, wall}, 
+  {air , air , wall, air , air , air , air , air , air , air , air , air , air , air }, 
+  {wall, air , wall, air , air , wall, wall, wall, wall, wall, air , wall, wall, wall}, 
+  {wall, air , air , air , air , wall, air , air , air , air , air , air , air , wall}, 
+  {wall, air , wall, wall, air , wall, wall, wall, wall, air , wall, wall, air , wall}, 
+  {wall, air , air , wall, air , air , air , air , air , air , air , wall, air , wall}, 
+  {wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, air , wall}, 
+};
+
+void beweegRobot() {
+  if (yRobot > schaal && keyCode == UP &&
+    speelVeld[(yRobot / schaal) - 1][xRobot / schaal] != wall ) {
+      yRobot -= schaal;
+  } 
+  else if (yRobot > schaal && keyCode == DOWN &&
+    speelVeld[(yRobot / schaal) + 1][xRobot / schaal] != wall ) {
+      yRobot += schaal;
+  } 
+  else if (xRobot > schaal && keyCode == LEFT &&
+    speelVeld[yRobot / schaal][(xRobot / schaal) - 1] != wall ) {
+      xRobot -= schaal;
+  } 
+  else if (xRobot > schaal && keyCode == RIGHT &&
+    speelVeld[yRobot / schaal][(xRobot / schaal) + 1] != wall ) {
+      xRobot += schaal;
+  } 
 }
+
+void keyPressed() {
+  beweegRobot();
+}
+
 
 void tekenRobot(int x, int y, int groote, int kleur) {
   tekenLevel(schaal);
   fill(kleur);
   rect(x, y, groote, groote);
-  //test rect van waar muurzen zitten visual
-  fill(255, 0, 0 , 100);
-  rect(x, y + groote, groote, groote);
-  rect(x, y - groote, groote, groote);
-  rect(x + groote, y, groote, groote);
-  rect(x - groote, y, groote, groote);
 }
 
 void pakObjOp() {
