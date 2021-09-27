@@ -10,14 +10,14 @@ int air  = 0;
 int wall = 1;
 int goal = 2;
 
-int schaal = 100;
+int schaal = 50;
 
-int xRobot = 400; 
-int yRobot = 200;
+int xRobot = 5 * schaal; 
+int yRobot = 3 * schaal;
 
 void setup() {
   frameRate(60);
-  size(1400, 700);
+  size(800, 450);
   background(ROOD);
   tekenLevel(schaal);
 }
@@ -57,32 +57,31 @@ void tekenVierkantLevel(int x, int y, int groote, int kleur) {
 }
 
 int[][] speelVeld = {
-  {wall, wall, wall, wall, air , wall, wall, wall, wall, wall, wall, wall, wall, wall}, 
-  {air , air , wall, air , air , air , air , air , air , air , air , air , air , air }, 
-  {wall, air , wall, air , air , wall, wall, wall, wall, wall, air , wall, wall, wall}, 
-  {wall, air , air , air , air , wall, air , air , air , air , air , air , air , wall}, 
-  {wall, air , wall, wall, air , wall, wall, wall, wall, air , wall, wall, air , wall}, 
-  {wall, air , air , wall, air , air , air , air , air , air , air , wall, air , wall}, 
-  {wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, air , wall}, 
+  {wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall}, 
+  {wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall}, 
+  {wall, wall, air, wall, air, air, air, air, air, air, air, air, air, air, wall, wall}, 
+  {wall, wall, air, wall, air, air, wall, wall, wall, wall, wall, air, wall, wall, wall, wall}, 
+  {wall, wall, air, air, air, air, wall, air, air, air, air, air, air, air, wall, wall}, 
+  {wall, wall, air, wall, wall, air, wall, wall, wall, wall, air, wall, wall, air, wall, wall}, 
+  {wall, wall, air, air, wall, air, air, air, air, air, air, air, wall, air, wall, wall}, 
+  {wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall}, 
+  {wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall}, 
 };
 
 void beweegRobot() {
   if (yRobot > schaal && keyCode == UP &&
     speelVeld[(yRobot / schaal) - 1][xRobot / schaal] != wall ) {
-      yRobot -= schaal;
-  } 
-  else if (yRobot > schaal && keyCode == DOWN &&
+    yRobot -= schaal;
+  } else if (yRobot > schaal && keyCode == DOWN &&
     speelVeld[(yRobot / schaal) + 1][xRobot / schaal] != wall ) {
-      yRobot += schaal;
-  } 
-  else if (xRobot > schaal && keyCode == LEFT &&
+    yRobot += schaal;
+  } else if (xRobot > schaal && keyCode == LEFT &&
     speelVeld[yRobot / schaal][(xRobot / schaal) - 1] != wall ) {
-      xRobot -= schaal;
-  } 
-  else if (xRobot > schaal && keyCode == RIGHT &&
+    xRobot -= schaal;
+  } else if (xRobot > schaal && keyCode == RIGHT &&
     speelVeld[yRobot / schaal][(xRobot / schaal) + 1] != wall ) {
-      xRobot += schaal;
-  } 
+    xRobot += schaal;
+  }
 }
 
 void keyPressed() {
