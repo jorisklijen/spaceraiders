@@ -17,7 +17,7 @@ int yRobot = 3 * schaal;
 
 void setup() {
   frameRate(60);
-  size(800, 450);
+  size(400, 450);
   background(ROOD);
   tekenLevel(schaal);
 }
@@ -59,11 +59,11 @@ void tekenVierkantLevel(int x, int y, int groote, int kleur) {
 int[][] speelVeld = {
   {wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall}, 
   {wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall}, 
-  {wall, wall, air, wall, air, air, air, air, air, air, air, air, air, air, wall, wall}, 
-  {wall, wall, air, wall, air, air, wall, wall, wall, wall, wall, air, wall, wall, wall, wall}, 
-  {wall, wall, air, air, air, air, wall, air, air, air, air, air, air, air, wall, wall}, 
-  {wall, wall, air, wall, wall, air, wall, wall, wall, wall, air, wall, wall, air, wall, wall}, 
-  {wall, wall, air, air, wall, air, air, air, air, air, air, air, wall, air, wall, wall}, 
+  {wall, wall, air , wall, air , air , air , air , air , air , air , air , air , air , wall, wall}, 
+  {wall, wall, air , wall, air , air , wall, wall, wall, wall, wall, air , wall, wall, wall, wall}, 
+  {wall, wall, air , air , air  , air, wall, air , air , air , air , air , air , air , wall, wall}, 
+  {wall, wall, air , wall, wall, air , wall, wall, wall, wall, air , wall, wall, air , wall, wall}, 
+  {wall, wall, air , air , wall, air , air , air , air , air , air , air , wall, air , wall, wall}, 
   {wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall}, 
   {wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall, wall}, 
 };
