@@ -17,7 +17,7 @@ int yRobot = 3 * schaal;
 
 void setup() {
   frameRate(60);
-  size(400, 450);
+  size(800, 450);
   background(ROOD);
   tekenLevel(schaal);
 }
@@ -38,7 +38,7 @@ void tekenLevelRij(int []veld, int yIndex, int groote) {
   int kleur = #000000;
   int xPos = 0;
   for (int i = 0; i < veld.length; i++) {
-    if (veld[i] == 1) {
+    if (veld[i] == wall) {
       kleur = GRIJS;
     } else if (veld[i] == 2) {
       kleur = GEEL;
