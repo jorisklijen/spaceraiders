@@ -6,12 +6,18 @@ float spawningPeddingBoven   = 50.5;
 float spawningPeddingOnder   = 50.5;
 float spawningPeddingZijkant = 75.5;
 
+boolean respawn = true;
+
 float getSnelheid() {
   return snelheid;
 }
 
-PImage getAfbeeldingLevend() {
-  return levend;
+PImage getAfbeeldingLevendR() {
+  return levendR;
+}
+
+PImage getAfbeeldingLevendL() {
+  return levendL;
 }
 
 PImage getAfbeeldingDood() {
@@ -19,12 +25,27 @@ PImage getAfbeeldingDood() {
 }
 
 void spawnEnnemy() {
-  yPos = constrain(random(height), spawningPeddingBoven, height - spawningPeddingOnder - grooteEnnemy );
-  xPos = constrain(random(width), spawningPeddingZijkant, width - spawningPeddingZijkant - grooteEnnemy );
-  tekenEnnemy(veranderAfbeelding(), xPos, yPos, grooteEnnemy);
+  if (respawn) {
+    respawn = false;
+    yPos = constrain(random(height), spawningPeddingBoven, height - spawningPeddingOnder - grooteEnnemy );
+    xPos = constrain(random(width), spawningPeddingZijkant, width - spawningPeddingZijkant - grooteEnnemy );
+  }
+  tekenEnnemy(veranderAfbeelding(), beweegEnnemy(getSnelheid()), yPos, grooteEnnemy);
 }
 
-void beweegEnnemy() {
+float beweegEnnemy(float speed) {
+  if (xPos + grooteEnnemy / 2 < width / 2) {
+    xPos = xPos - speed;
+    if (xPos + grooteEnnemy < 0) {
+      respawn = true;
+    }
+  } else if (xPos + grooteEnnemy / 2 > width / 2) {
+    xPos = xPos + speed;
+    if (xPos > width) {
+      respawn = true;
+    }
+  }
+  return xPos;
 }
 
 void tekenEnnemy(PImage img, float x, float y, int groote) {
@@ -32,8 +53,12 @@ void tekenEnnemy(PImage img, float x, float y, int groote) {
 }
 
 PImage veranderAfbeelding() {
-  if (!isAlive()) {
-    return getAfbeeldingLevend();
+  if (isAlive()) {
+    if (xPos + grooteEnnemy / 2 > width / 2){
+    return getAfbeeldingLevendR();
+    }else{
+    return getAfbeeldingLevendL();
+    }
   } else {
     return getAfbeeldingDood();
   }

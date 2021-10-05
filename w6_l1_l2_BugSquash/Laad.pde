@@ -1,13 +1,19 @@
-PImage levend;
+PImage levendR;
+PImage levendL;
 PImage dood;
 PImage logo;
-PImage timeUp;
-PImage gameover;
+PImage background;
+
+PFont bitFont;
+
+void laadFont() {
+  bitFont = createFont("bitFont.otf", 8);
+}
 
 void laadAfbeeldingen() {
-  levend   = loadImage("bug.png"); 
+  levendR   = loadImage("bugR.png"); 
+  levendL   = loadImage("bugL.png");
   dood     = loadImage("dood.png"); 
-  logo     = loadImage("bug.png"); 
-  timeUp   = loadImage("bug.png"); 
-  gameover = loadImage("bug.png");
+  logo     = loadImage("logo.png"); 
+  background = loadImage("bg.png");
 }

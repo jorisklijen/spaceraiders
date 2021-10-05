@@ -8,11 +8,12 @@ void settings() {
 
 void setup() {
   laadAfbeeldingen();
+  laadFont();
   frameRate(fps);
 }
 
 void draw() {
-  spawnEnnemy();
+  loadScene();
 }
 
 void mousePressed() {
