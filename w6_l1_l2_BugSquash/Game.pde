@@ -1,7 +1,5 @@
 // --punten---------------------------------------------
-void setScore(int punten) {
-  score = punten;
-}
+
 // --achtergond-----------------------------------------
 PImage getAfbeeldingAchtergrond() {
   return background;
@@ -30,6 +28,6 @@ void setEindScherm(boolean status) {
 
 void beginGame() {
   tekenAchtergrond(getAfbeeldingAchtergrond());
-  drawCompleteTimer();
+  //drawCompleteTimer();
   spawnEnnemy();
 }

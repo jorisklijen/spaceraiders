@@ -14,6 +14,7 @@ void setup() {
 
 void draw() {
   loadScene();
+  tekenScore(getScore(), 5, textSize, textKleur, getBitFont(), textSize);
 }
 
 void mousePressed() {

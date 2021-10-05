@@ -1,30 +1,35 @@
-boolean scoreBool = true;
-int tempScore = 0;
+boolean scoreBool;
 // --locaties vijhand----------------------------------
-float getXposEnnemy(){
- return xPos; 
+float getXposEnnemy() {
+  return xPos;
 }
-float getYposEnnemy(){
- return yPos; 
+float getYposEnnemy() {
+  return yPos;
 }
 // --Score---------------------------------------------
-int getScore(){
+int getScore() {
   return score;
 }
-boolean getIsAlive(){
- return isAlive(); 
+void setScore(int punten) {
+  score = punten;
 }
 
-int telScore(int score){
-  tempScore = score;
-  if (!getIsAlive() && scoreBool){
+boolean getIsAlive() {
+  return isAlive();
+}
+
+void telScore() {
+  int punten = 0;
+  if (!getIsAlive() && scoreBool) {
     scoreBool = false;
-    
+    punten++;
+    setScore(getScore() + punten);
   }
-  return score;
 }
 
-void tekenScore(int score, int x, int y, int kleur, PFont font, int groote){
+
+
+void tekenScore(int score, int x, int y, int kleur, PFont font, int groote) {
   fill(kleur);
   textFont(font);
   textSize(groote);

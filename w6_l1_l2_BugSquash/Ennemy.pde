@@ -54,12 +54,15 @@ void tekenEnnemy(PImage img, float x, float y, int groote) {
 
 PImage veranderAfbeelding() {
   if (isAlive()) {
-    if (xPos + grooteEnnemy / 2 > width / 2){
-    return getAfbeeldingLevendR();
-    }else{
-    return getAfbeeldingLevendL();
+    scoreBool = true;
+    if (xPos + grooteEnnemy / 2 > width / 2) {
+      return getAfbeeldingLevendR();
+    } else {
+      return getAfbeeldingLevendL();
     }
+    
   } else {
+    telScore();
     return getAfbeeldingDood();
   }
 }
