@@ -1,6 +1,6 @@
 int timeInSec = 0;
 int textSize  = 45;
-int textKleur = #CBFFEA;
+int textKleur = #B8FFB4;
 
 boolean timesUp = false;
 
