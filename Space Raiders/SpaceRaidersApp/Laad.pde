@@ -5,8 +5,13 @@ PImage badRaider;
 PImage monster;
 PImage diamant;
 PImage munt;
+PImage knop;
+PImage portaal;
+PImage zuurstofTank;
 
+PImage space;
 PImage vloer;
+PImage muur;
 PImage muur0;
 PImage muur1;
 PImage muur2;
@@ -20,46 +25,56 @@ PImage muur9;
 PImage muur10;
 PImage muur11;
 PImage muur12;
-
-final int BAD_RAIDER = -1 ;
-final int DIAMANT = -2;
-
-final int LEEG = 0;
-final int VLOER = 0;
-final int MUUR0 = 1;
-final int MUUR1 = 2;
-final int MUUR2 = 3;
-final int MUUR3 = 4;
-final int MUUR4 = 5;
-final int MUUR5 = 6;
-final int MUUR6 = 7;
-final int MUUR7 = 8;
-final int MUUR8 = 9;
-final int MUUR9 = 10;
-final int MUUR10 = 11;
-final int MUUR11 = 12;
-final int MUUR12 = 13;
-
-
-int[][]level = {
-  {LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG  }, 
-  {LEEG, MUUR11, MUUR1, MUUR1, MUUR1, MUUR1, MUUR1, MUUR1, MUUR1, MUUR12, LEEG, LEEG, LEEG, LEEG  }, 
-  {LEEG, MUUR4, LEEG , LEEG , LEEG , LEEG , LEEG , LEEG , LEEG , MUUR8, LEEG, LEEG, LEEG, LEEG  }, 
-  {LEEG, MUUR4, LEEG , LEEG , LEEG , LEEG , LEEG , LEEG , LEEG , MUUR0, LEEG, LEEG, LEEG, LEEG  }, 
-  {LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG  }, 
-  {LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG  }, 
-  {LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG  }, 
-  {LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG  }, 
-  {LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG  }, 
-  {LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG  }, 
-  {LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG  }, 
-  {LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG  }, 
-  {LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG  }, 
-  {LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG, LEEG  }, 
-};
+PImage muur13;
+PImage muur14;
+PImage muur15;
+PImage muur16;
+PImage muur17;
+PImage muur18;
+PImage muur19;
+PImage muur20;
+PImage muur21;
+PImage muur22;
+PImage muur23;
+PImage muur24;
+PImage muur25;
+PImage muur26;
+PImage muur27;
+PImage muur28;
+PImage muur29;
+PImage muur30;
+PImage muur31;
+PImage muur32;
+PImage muur33;
+PImage muur34;
+PImage muur35;
+PImage muur36;
+PImage muur37;
+PImage muur38;
+PImage muur39;
+PImage muur40;
+PImage muur41;
+PImage muur42;
+PImage muur43;
+PImage muur44;
+PImage muur45;
 
 void laadAfbeeldingen() {
+
+  speler1 = loadImage("player1.png");
+  speler2 = loadImage("player2.png");
+  
+  badRaider = loadImage("badRaider.png");
+  monster = loadImage("monster.png");
+  diamant = loadImage("diamant.png");
+  munt = loadImage("munt.png");
+  knop = loadImage("knop.png");
+  portaal= loadImage("portaal.png");
+  zuurstofTank = loadImage("zuurstofTank.png");
+
+  space = loadImage("space.png");
   vloer = loadImage("vloer.png");
+  muur  = loadImage("muur.png");
   muur0 = loadImage("muur0.png");
   muur1 = loadImage("muur1.png");
   muur2 = loadImage("muur2.png");
@@ -73,66 +88,37 @@ void laadAfbeeldingen() {
   muur10 = loadImage("muur10.png");
   muur11 = loadImage("muur11.png");
   muur12 = loadImage("muur12.png");
-}
-
-void tekenLevel(int groote) {
-  //background(LICHTBLOUW);
-  for (int colom = 0; colom < level.length; colom++) {
-    for (int rij = 0; rij < level[colom].length; rij++) {
-      switch(level[colom][rij]) {
-      case 0: 
-        tekenImg(groote * rij, groote * colom, groote, vloer);
-        break;
-      case 1: 
-        tekenImg(groote * rij, groote * colom, groote, muur0);
-        break;
-      case 2: 
-        tekenImg(groote * rij, groote * colom, groote, muur1 );
-        break;
-      case 3: 
-        tekenImg(groote * rij, groote * colom, groote, muur2);
-        break;
-      case 4: 
-        tekenImg(groote * rij, groote * colom, groote, muur3);
-        break;
-      case 5: 
-        tekenImg(groote * rij, groote * colom, groote, muur4);
-        break;
-      case 6: 
-        tekenImg(groote * rij, groote * colom, groote, muur5);
-        break;
-      case 7: 
-        tekenImg(groote * rij, groote * colom, groote, muur6);
-        break;
-      case 8: 
-        tekenImg(groote * rij, groote * colom, groote, muur7);
-        break;
-      case 9: 
-        tekenImg(groote * rij, groote * colom, groote, muur8);
-        break;
-      case 10: 
-        tekenImg(groote * rij, groote * colom, groote, muur9);
-        break;
-      case 11: 
-        tekenImg(groote * rij, groote * colom, groote, muur10);
-        break;
-     case 12: 
-        tekenImg(groote * rij, groote * colom, groote, muur11);
-        break;
-     case 13: 
-        tekenImg(groote * rij, groote * colom, groote, muur12);
-        break;
-      default :
-        println("er word " + level[colom][rij] + " gegeven en deze heeft geen afbeelding toegewezen gekregen");
-        println("***********************************************************************");
-        break;
-      }
-    }
-  }
-}
-
-void tekenImg(int x, int y, int groote, PImage afbeelding) {
-  image(afbeelding, x, y, groote, groote);
-  //println("Zonnet " + afbeelding + "afgedrukt");
-  //println("***********************");
+  muur13 = loadImage("muur13.png");
+  muur14 = loadImage("muur14.png");
+  muur15 = loadImage("muur15.png");
+  muur16 = loadImage("muur16.png");
+  muur17 = loadImage("muur17.png");
+  muur18 = loadImage("muur18.png");
+  muur19 = loadImage("muur19.png");
+  muur20 = loadImage("muur20.png");
+  muur21 = loadImage("muur21.png");
+  muur22 = loadImage("muur22.png");
+  muur23 = loadImage("muur23.png");
+  muur24 = loadImage("muur24.png");
+  muur25 = loadImage("muur25.png");
+  muur26 = loadImage("muur26.png");
+  muur27 = loadImage("muur27.png");
+  muur28 = loadImage("muur28.png");
+  muur29 = loadImage("muur29.png");
+  muur30 = loadImage("muur30.png");
+  muur31 = loadImage("muur31.png");
+  muur32 = loadImage("muur32.png");
+  muur33 = loadImage("muur33.png");
+  muur34 = loadImage("muur34.png");
+  muur35 = loadImage("muur35.png");
+  muur36 = loadImage("muur36.png");
+  muur37 = loadImage("muur37.png");
+  muur38 = loadImage("muur38.png");
+  muur39 = loadImage("muur39.png");
+  muur40 = loadImage("muur40.png");
+  muur41 = loadImage("muur41.png");
+  muur42 = loadImage("muur42.png");
+  muur43 = loadImage("muur43.png");
+  muur44 = loadImage("muur44.png");
+  muur45 = loadImage("muur45.png");
 }

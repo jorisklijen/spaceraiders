@@ -1,10 +1,12 @@
+
+
 void settings(){
-  size(800, 800);
+  size(1500, 1000);
 }
 
 void setup(){
   laadAfbeeldingen();
-  tekenLevel(60);
+  tekenLevel(100, level0);
 }
 
 void draw(){
