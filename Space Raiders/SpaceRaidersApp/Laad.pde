@@ -59,11 +59,187 @@ PImage muur43;
 PImage muur44;
 PImage muur45;
 
+PFont spaceFond;
+
+PImage getKnop() {
+  return knop;
+}
+PImage GetPortaal() {
+  return portaal;
+}
+PImage GeTMunt() {
+  return munt;
+}
+PImage GetDiamant() {
+  return diamant;
+}
+PImage GetVloer() {
+  return vloer;
+}
+PImage GetSpace() {
+  return space;
+}
+PImage GetBadRaider() {
+  return badRaider;
+}
+PImage GetZuurstofTank() {
+  return zuurstofTank;
+}
+PImage GetMuur() {
+  return muur;
+}
+PImage GetMuur0() {
+  return muur0;
+}
+PImage GetMuur1() {
+  return muur1;
+}
+PImage GetMuur2() {
+  return muur2;
+}
+PImage GetMuur3() {
+  return muur3;
+}
+PImage GetMuur4() {
+  return muur4;
+}
+PImage GetMuur5() {
+  return muur5;
+}
+PImage GetMuur6() {
+  return muur6;
+}
+PImage GetMuur7() {
+  return muur7;
+}
+PImage GetMuur8() {
+  return muur8;
+}
+PImage GetMuur9() {
+  return muur9;
+}
+PImage GetMuur10() {
+  return muur10;
+}
+PImage GetMuur11() {
+  return muur11;
+}
+PImage GetMuur12() {
+  return muur12;
+}
+PImage GetMuur13() {
+  return muur13;
+}
+PImage GetMuur14() {
+  return muur14;
+}
+PImage GetMuur15() {
+  return muur15;
+}
+PImage GetMuur16() {
+  return muur16;
+}
+PImage GetMuur17() {
+  return muur17;
+}
+PImage GetMuur18() {
+  return muur18;
+}
+PImage GetMuur19() {
+  return muur19;
+}
+PImage GetMuur20() {
+  return muur20;
+}
+PImage GetMuur21() {
+  return muur21;
+}
+PImage GetMuur22() {
+  return muur22;
+}
+PImage GetMuur23() {
+  return muur23;
+}
+PImage GetMuur24() {
+  return muur24;
+}
+PImage GetMuur25() {
+  return muur25;
+}
+PImage GetMuur26() {
+  return muur26;
+}
+PImage GetMuur27() {
+  return muur27;
+}
+PImage GetMuur28() {
+  return muur28;
+}
+PImage GetMuur29() {
+  return muur29;
+}
+PImage GetMuur30() {
+  return muur30;
+}
+PImage GetMuur31() {
+  return muur31;
+}
+PImage GetMuur32() {
+  return muur32;
+}
+PImage GetMuur33() {
+  return muur33;
+}
+PImage GetMuur34() {
+  return muur34;
+}
+PImage GetMuur35() {
+  return muur35;
+}
+PImage GetMuur36() {
+  return muur36;
+}
+PImage GetMuur37() {
+  return muur37;
+}
+PImage GetMuur38() {
+  return muur38;
+}
+PImage GetMuur39() {
+  return muur39;
+}
+PImage GetMuur40() {
+  return muur40;
+}
+PImage GetMuur41() {
+  return muur41;
+}
+PImage GetMuur42() {
+  return muur42;
+}
+PImage GetMuur43() {
+  return muur43;
+}
+PImage GetMuur44() {
+  return muur44;
+}
+PImage GetMuur45() {
+  return muur45;
+}
+
+PFont getSpaceFond(){
+ return spaceFond; 
+}
+
+void laadFond() {
+  spaceFond = createFont("space.otf", 8);
+}
+
 void laadAfbeeldingen() {
 
   speler1 = loadImage("player1.png");
   speler2 = loadImage("player2.png");
-  
+
   badRaider = loadImage("badRaider.png");
   monster = loadImage("monster.png");
   diamant = loadImage("diamant.png");

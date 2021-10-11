@@ -1,12 +1,13 @@
-
+int vensterBreete = 1500;
+int vensterHoogte = 1000;
 
 void settings(){
-  size(1500, 1000);
+  size(vensterBreete, vensterHoogte);
 }
 
 void setup(){
   laadAfbeeldingen();
-  tekenLevel(100, level0);
+  tekenScene(schaal, getScenes()[getLevel()]);
 }
 
 void draw(){
