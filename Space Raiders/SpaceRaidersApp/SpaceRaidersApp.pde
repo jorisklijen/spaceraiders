@@ -1,15 +1,18 @@
 int vensterBreete = 1500;
 int vensterHoogte = 1000;
 
-void settings(){
+void settings() {
   size(vensterBreete, vensterHoogte);
 }
 
-void setup(){
+void setup() {
   laadAfbeeldingen();
-  tekenScene(schaal, getScenes()[getLevel()]);
+  laadFond();
 }
 
-void draw(){
-  
+void draw() {
+  laadScene();
+}
+
+void keyPressed() {
 }

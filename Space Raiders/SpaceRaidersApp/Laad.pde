@@ -60,175 +60,180 @@ PImage muur44;
 PImage muur45;
 
 PFont spaceFond;
-
+PImage getSpeler1() {
+  return speler1;
+}
+PImage getSpeler2() {
+  return speler2;
+}
 PImage getKnop() {
   return knop;
 }
-PImage GetPortaal() {
+PImage getPortaal() {
   return portaal;
 }
-PImage GeTMunt() {
+PImage geTMunt() {
   return munt;
 }
-PImage GetDiamant() {
+PImage getDiamant() {
   return diamant;
 }
-PImage GetVloer() {
+PImage getVloer() {
   return vloer;
 }
-PImage GetSpace() {
+PImage getSpace() {
   return space;
 }
-PImage GetBadRaider() {
+PImage getBadRaider() {
   return badRaider;
 }
-PImage GetZuurstofTank() {
+PImage getZuurstofTank() {
   return zuurstofTank;
 }
-PImage GetMuur() {
+PImage getMuur() {
   return muur;
 }
-PImage GetMuur0() {
+PImage getMuur0() {
   return muur0;
 }
-PImage GetMuur1() {
+PImage getMuur1() {
   return muur1;
 }
-PImage GetMuur2() {
+PImage getMuur2() {
   return muur2;
 }
-PImage GetMuur3() {
+PImage getMuur3() {
   return muur3;
 }
-PImage GetMuur4() {
+PImage getMuur4() {
   return muur4;
 }
-PImage GetMuur5() {
+PImage getMuur5() {
   return muur5;
 }
-PImage GetMuur6() {
+PImage getMuur6() {
   return muur6;
 }
-PImage GetMuur7() {
+PImage getMuur7() {
   return muur7;
 }
-PImage GetMuur8() {
+PImage getMuur8() {
   return muur8;
 }
-PImage GetMuur9() {
+PImage getMuur9() {
   return muur9;
 }
-PImage GetMuur10() {
+PImage getMuur10() {
   return muur10;
 }
-PImage GetMuur11() {
+PImage getMuur11() {
   return muur11;
 }
-PImage GetMuur12() {
+PImage getMuur12() {
   return muur12;
 }
-PImage GetMuur13() {
+PImage getMuur13() {
   return muur13;
 }
-PImage GetMuur14() {
+PImage getMuur14() {
   return muur14;
 }
-PImage GetMuur15() {
+PImage getMuur15() {
   return muur15;
 }
-PImage GetMuur16() {
+PImage getMuur16() {
   return muur16;
 }
-PImage GetMuur17() {
+PImage getMuur17() {
   return muur17;
 }
-PImage GetMuur18() {
+PImage getMuur18() {
   return muur18;
 }
-PImage GetMuur19() {
+PImage getMuur19() {
   return muur19;
 }
-PImage GetMuur20() {
+PImage getMuur20() {
   return muur20;
 }
-PImage GetMuur21() {
+PImage getMuur21() {
   return muur21;
 }
-PImage GetMuur22() {
+PImage getMuur22() {
   return muur22;
 }
-PImage GetMuur23() {
+PImage getMuur23() {
   return muur23;
 }
-PImage GetMuur24() {
+PImage getMuur24() {
   return muur24;
 }
-PImage GetMuur25() {
+PImage getMuur25() {
   return muur25;
 }
-PImage GetMuur26() {
+PImage getMuur26() {
   return muur26;
 }
-PImage GetMuur27() {
+PImage getMuur27() {
   return muur27;
 }
-PImage GetMuur28() {
+PImage getMuur28() {
   return muur28;
 }
-PImage GetMuur29() {
+PImage getMuur29() {
   return muur29;
 }
-PImage GetMuur30() {
+PImage getMuur30() {
   return muur30;
 }
-PImage GetMuur31() {
+PImage getMuur31() {
   return muur31;
 }
-PImage GetMuur32() {
+PImage getMuur32() {
   return muur32;
 }
-PImage GetMuur33() {
+PImage getMuur33() {
   return muur33;
 }
-PImage GetMuur34() {
+PImage getMuur34() {
   return muur34;
 }
-PImage GetMuur35() {
+PImage getMuur35() {
   return muur35;
 }
-PImage GetMuur36() {
+PImage getMuur36() {
   return muur36;
 }
-PImage GetMuur37() {
+PImage getMuur37() {
   return muur37;
 }
-PImage GetMuur38() {
+PImage getMuur38() {
   return muur38;
 }
-PImage GetMuur39() {
+PImage getMuur39() {
   return muur39;
 }
-PImage GetMuur40() {
+PImage getMuur40() {
   return muur40;
 }
-PImage GetMuur41() {
+PImage getMuur41() {
   return muur41;
 }
-PImage GetMuur42() {
+PImage getMuur42() {
   return muur42;
 }
-PImage GetMuur43() {
+PImage getMuur43() {
   return muur43;
 }
-PImage GetMuur44() {
+PImage getMuur44() {
   return muur44;
 }
-PImage GetMuur45() {
+PImage getMuur45() {
   return muur45;
 }
 
-PFont getSpaceFond(){
- return spaceFond; 
+PFont getSpaceFond() {
+  return spaceFond;
 }
 
 void laadFond() {
