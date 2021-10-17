@@ -242,7 +242,12 @@ void tekenScene(int groote, int[][]scene) {
       }
       switch(scene[colom][rij]) {
       case 2: 
+      // random element raider of coin.
+      if (random(2) >= 0){
         tekenImg(groote * rij, groote * colom, groote, getDiamant());
+      }else{
+        tekenImg(groote * rij, groote * colom, groote, getBadRaider());
+      }
         break;
       case 10: 
         tekenImg(groote * rij, groote * colom, groote, getKnop());

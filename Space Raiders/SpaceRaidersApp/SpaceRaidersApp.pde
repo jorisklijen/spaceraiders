@@ -15,4 +15,5 @@ void draw() {
 }
 
 void keyPressed() {
+  beweegSpeler(getScenes()[getLevel()]);
 }

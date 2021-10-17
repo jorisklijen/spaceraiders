@@ -1,9 +1,15 @@
 
 boolean gamestatus = false;
 
-void gameloop(int aantalSpelers, int groote, int aantalRandomMuntenOfBadRaiders) {
-  tekenSpeler(getSpeler1(), getXPosSpeler1() * groote, getYPosSpeler1() * groote, groote);
+void gameloop(int aantalSpelers, int groote) {
+  tekenScene(groote, getScenes()[getLevel()]);
+  tekenSpeler(getSpeler1(), getXPosSpeler() * groote, getYPosSpeler() * groote, groote);
 }
 
 void nextLevel() {
+  if (getLevel() != getScenes().length && gamestatus == true) {
+    setLevel(getLevel() + 1);
+  }else{
+   setLevel(0); 
+  }
 }

@@ -25,7 +25,7 @@ int[][][]scenes = {
     // level 1 index 1
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR17(), GET_MUUR0_(), GET_MUUR21(), GET_MUUR0_(), GET_MUUR0_(), GET_MUUR21(), GET_MUUR0_(), GET_MUUR0_(), GET_MUUR21(), GET_MUUR0_(), GET_MUUR0_(), GET_MUUR0_(), GET_MUUR16()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_MUUR__(), GET_MUUR12(), GET_MUUR__(), GET_MUUR__(), GET_MUUR9_(), GET_MUUR__(), GET_MUUR__(), GET_MUUR9_(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_MUUR1_()}, 
-    {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_RANDOM(), GET_MUUR9_(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR__(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR__(), GET_LEEG_1(), GET_RANDOM(), GET_SPAWN_(), GET_MUUR1_()}, 
+    {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_RANDOM(), GET_MUUR9_(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR__(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR__(), GET_LEEG_1(), GET_RANDOM(), GET_LEEG_1(), GET_MUUR1_()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_LEEG_1(), GET_MUUR__(), GET_LEEG_1(), GET_RANDOM(), GET_LEEG_1(), GET_LEEG_1(), GET_RANDOM(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR45(), GET_LEEG_1(), GET_MUUR1_()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_KNOP__(), GET_LEEG_1(), GET_MUUR__(), GET_RANDOM(), GET_MUUR1_()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR45(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR5_(), GET_MUUR4_(), GET_RANDOM(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR1_()}, 
@@ -55,6 +55,10 @@ int[][][] getScenes() {
 
 int getLevel() {
   return level;
+} 
+
+int getSchaal(){
+  return schaal;
 }
 
 boolean getGameScherm() {
@@ -84,7 +88,7 @@ void setEindScherm(boolean resultaat) {
 void laadScene() {
   if (startScherm) {
   } else if (gameScherm) {
-    gameloop(1, schaal, 4);
+    gameloop(level, schaal);
   } else if (eindScherm) {
   }
 }
