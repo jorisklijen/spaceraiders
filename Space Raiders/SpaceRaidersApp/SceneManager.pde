@@ -53,6 +53,10 @@ int[][][] getScenes() {
   return scenes;
 }
 
+int getScore(){
+ return score; 
+}
+
 int getLevel() {
   return level;
 } 
@@ -88,7 +92,7 @@ void setEindScherm(boolean resultaat) {
 void laadScene() {
   if (startScherm) {
   } else if (gameScherm) {
-    gameloop(level, schaal);
+    gameloop(schaal);
   } else if (eindScherm) {
   }
 }
