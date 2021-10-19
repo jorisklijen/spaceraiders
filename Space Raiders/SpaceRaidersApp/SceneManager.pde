@@ -3,7 +3,7 @@ boolean gameScherm = true;
 boolean eindScherm = false;
 boolean hiscoreScherm = false;
 
-int level = 3;
+int level = 0;
 int schaal = 100;
 int score = 0;
 int aantaShatten = 1;
