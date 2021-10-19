@@ -9,6 +9,11 @@ PImage knop;
 PImage portaal;
 PImage zuurstofTank;
 
+PImage stekel1;
+PImage stekel2;
+PImage stekel3;
+PImage stekel4;
+
 PImage space;
 PImage vloer;
 PImage muur;
@@ -232,6 +237,22 @@ PImage getMuur45() {
   return muur45;
 }
 
+PImage getStekel1() {
+  return stekel1;
+}
+
+PImage getStekel2() {
+  return stekel2;
+}
+
+PImage getStekel3() {
+  return stekel3;
+}
+
+PImage getStekel4() {
+  return stekel4;
+}
+
 PFont getSpaceFond() {
   return spaceFond;
 }
@@ -247,15 +268,20 @@ void laadAfbeeldingen() {
 
   badRaider = loadImage("badRaider.png");
   monster = loadImage("monster.png");
-  diamant = loadImage("diamant.png");
-  munt = loadImage("munt.png");
+  diamant = loadImage("alt_diamant.png");
+  munt = loadImage("alt_munt.png");
   knop = loadImage("knop.png");
-  portaal= loadImage("portaal.png");
-  zuurstofTank = loadImage("zuurstofTank.png");
+  portaal= loadImage("alt_portaal.png");
+  zuurstofTank = loadImage("alt_zuurstofTank.png");
 
-  space = loadImage("space.png");
+  stekel1 = loadImage("spike1.png");
+  stekel2 = loadImage("spike2.png");
+  stekel3 = loadImage("spike3.png");
+  stekel4 = loadImage("spike4.png");
+
+  space = loadImage("alt_space.png");
   vloer = loadImage("vloer.png");
-  muur  = loadImage("muur.png");
+  muur  = loadImage("alt_muur.png");
   muur0 = loadImage("muur0.png");
   muur1 = loadImage("muur1.png");
   muur2 = loadImage("muur2.png");

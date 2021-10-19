@@ -58,14 +58,32 @@ final int MUUR44 = -46;
 final int MUUR45 = -47;
 
 final int RANDOM = 2;
-final int SPAWN_ = 3;
+
+final int STKEL1 = 3;
+final int STKEL2 = 4;
+final int STKEL3 = 5;
+final int STKEL4 = 6;
+
+final int GET_STKEL1() {
+  return STKEL1;
+}
+
+final int GET_STKEL2() {
+  return STKEL2;
+}
+
+final int GET_STKEL3() {
+  return STKEL3;
+}
+
+final int GET_STKEL4() {
+  return STKEL4;
+}
 
 final int GET_RANDOM() {
   return RANDOM;
 }
-final int GET_SPAWN_() {
-  return SPAWN_;
-}
+
 final int GET_KNOP__() {
   return KNOP__;
 }
@@ -241,13 +259,20 @@ void tekenScene(int groote, int[][]scene) {
         tekenImg(groote * rij, groote * colom, groote, getSpace());
       }
       switch(scene[colom][rij]) {
+      case 3: 
+        tekenImg(groote * rij, groote * colom, groote, getStekel1());
+        break;
+      case 4: 
+        tekenImg(groote * rij, groote * colom, groote, getStekel2());
+        break;
+      case 5: 
+        tekenImg(groote * rij, groote * colom, groote, getStekel3());
+        break;
+      case 6: 
+        tekenImg(groote * rij, groote * colom, groote, getStekel4());
+        break;
       case 2: 
-      // random element raider of coin.
-      if (random(2) >= 0){
-        tekenImg(groote * rij, groote * colom, groote, getDiamant());
-      }else{
-        tekenImg(groote * rij, groote * colom, groote, getBadRaider());
-      }
+        // random element raider of coin.
         break;
       case 10: 
         tekenImg(groote * rij, groote * colom, groote, getKnop());

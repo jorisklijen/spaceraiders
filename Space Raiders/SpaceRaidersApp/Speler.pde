@@ -1,6 +1,6 @@
 int spelerSnelheid = 1; //<>//
 int xPosSpeler = 13;
-int yPosSpeler = 4;
+int yPosSpeler = 2;
 boolean spelerLevend = true;
 float zuurstof = 0.5f;
 float zuurstofVerbruik = 0.0025f;
@@ -29,6 +29,11 @@ void beweegSpeler(int[][] level) {
     switch (key) {
       // beweeg omhoog
     case 'w':
+      if (level[yPosSpeler - 1][xPosSpeler] > 0) {
+        yPosSpeler = yPosSpeler - spelerSnelheid;
+      }
+      break;
+    case UP:
       if (level[yPosSpeler - 1][xPosSpeler] > 0) {
         yPosSpeler = yPosSpeler - spelerSnelheid;
       }
@@ -62,7 +67,7 @@ void beweegSpeler(int[][] level) {
 
 void zuurstofAfname() {
   if (spelerLevend) {
-    zuurstof =  constrain(zuurstof - zuurstofVerbruik, 0, 0.5);
+    zuurstof = constrain(zuurstof - zuurstofVerbruik, 0, 0.5);
   }
   //println(zuurstof);
 }

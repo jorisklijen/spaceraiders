@@ -1,4 +1,4 @@
-void tekenScore(int score, int x, int y, int kleur, PFont font, int groote){
+void tekenScore(int score, int x, int y, int kleur, PFont font, int groote) {
   fill(kleur);
   textFont(font);
   textSize(groote/2.1);
