@@ -279,7 +279,7 @@ void laadAfbeeldingen() {
   stekel3 = loadImage("spike3.png");
   stekel4 = loadImage("spike4.png");
 
-  space = loadImage("alt_space.png");
+  space = loadImage("alt_space2.png");
   vloer = loadImage("vloer.png");
   muur  = loadImage("alt_muur.png");
   muur0 = loadImage("muur0.png");

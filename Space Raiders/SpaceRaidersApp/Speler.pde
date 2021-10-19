@@ -33,11 +33,6 @@ void beweegSpeler(int[][] level) {
         yPosSpeler = yPosSpeler - spelerSnelheid;
       }
       break;
-    case UP:
-      if (level[yPosSpeler - 1][xPosSpeler] > 0) {
-        yPosSpeler = yPosSpeler - spelerSnelheid;
-      }
-      break;
       // beweeg omlaag
     case 's':
       if (level[yPosSpeler + 1][xPosSpeler] > 0) {
