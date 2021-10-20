@@ -4,14 +4,19 @@ int yPosSpeler = 2;
 boolean spelerLevend = true;
 float zuurstof = 0.5f;
 float zuurstofVerbruik = 0.0025f;
-
+boolean beweegt = false;
 int getXPosSpeler() {
   return xPosSpeler;
 }
 int getYPosSpeler() {
   return yPosSpeler;
 }
-
+void setXPosSpeler(int pos) {
+  xPosSpeler = pos;
+}
+void setYPosSpeler(int pos) {
+  yPosSpeler = pos;
+}
 void setZuurstof(float hoeveelhijd) {
   zuurstof = hoeveelhijd;
 }
@@ -24,30 +29,68 @@ boolean getSpelerLevend() {
   return spelerLevend;
 }
 void beweegSpeler(int[][] level) {
+
+
   if (keyPressed) {
   } else { 
+
+    //************************************************
+    //||  oude code bewegen nog een bug dat         || 
+    //||  er meerdere inputs gegeven kunnen worden  ||
+    //||   -joris de kleijn 20/10/2021              ||
+    //************************************************
+    //if (key == 'p') {
+    //  println("deze zorgt er voor dat er geen prio is bij het beweegen");
+    //} else if (key == 'w' && level[yPosSpeler - 1][xPosSpeler] > 0 && beweegt == false) {
+    //  beweegt = true;
+    //  yPosSpeler = yPosSpeler - spelerSnelheid;
+    //  if(level[yPosSpeler - 1][xPosSpeler] <= 0){
+    //    beweegt = false;
+    //  }
+    //} else if (key == 's' && level[yPosSpeler + 1][xPosSpeler] > 0 && beweegt == false) {
+    //  beweegt = true;
+    //  yPosSpeler = yPosSpeler + spelerSnelheid;
+    //  if(level[yPosSpeler + 1][xPosSpeler] <= 0){
+    //    beweegt = false;
+    //  }
+    //} else if (key == 'a' && level[yPosSpeler][xPosSpeler - 1] > 0 && beweegt == false) {
+    //  beweegt = true;
+    //  xPosSpeler = xPosSpeler - spelerSnelheid;
+    //  if(level[yPosSpeler][xPosSpeler - 1] <= 0){
+    //    beweegt = false;
+    //  }
+    //} else if (key == 'd' && level[yPosSpeler][xPosSpeler + 1] > 0 && beweegt == false) {
+    //  beweegt = true;
+    //  xPosSpeler = xPosSpeler + spelerSnelheid;
+    //  if(level[yPosSpeler][xPosSpeler + 1] <= 0){
+    //    beweegt = false;
+    //  }
+    //}
+
     switch (key) {
-      // beweeg omhoog
     case 'w':
-      if (level[yPosSpeler - 1][xPosSpeler] > 0) {
+      if (level[yPosSpeler - 1][xPosSpeler] > 0 ) {
         yPosSpeler = yPosSpeler - spelerSnelheid;
       }
       break;
-      // beweeg omlaag
     case 's':
-      if (level[yPosSpeler + 1][xPosSpeler] > 0) {
+      if (level[yPosSpeler + 1][xPosSpeler] > 0 ) {
+        beweegt = true;
         yPosSpeler = yPosSpeler + spelerSnelheid;
+      } else {
+        beweegt = false;
       }
       break;
-      // beweeg links
     case 'a':
-      if (level[yPosSpeler][xPosSpeler - 1] > 0) {
+      if (level[yPosSpeler][xPosSpeler - 1] > 0 ) {
+        beweegt = true;
         xPosSpeler = xPosSpeler - spelerSnelheid;
+      } else {
+        beweegt = false;
       }
       break;
-      // beweeg rechts
     case 'd':
-      if (level[yPosSpeler][xPosSpeler + 1] > 0) {
+      if (level[yPosSpeler][xPosSpeler + 1] > 0 ) {
         xPosSpeler = xPosSpeler + spelerSnelheid;
       }
       break;
@@ -71,7 +114,6 @@ void tekenSpeler(PImage speler, int x, int y, int groote, int kleurBg, int kleur
   tekenZuurstofBalk(x + groote / 4, y + groote / 12, kleurO2, kleurBg, zuurstofWaarde, 0.15f, 0.5f, groote);
   image(speler, x, y, groote, groote);
 }
-
 void tekenZuurstofBalk(int x, int y, int kleur, int kleurBg, float vulwaarde, float hoogte, float breete, int groote) {
   int afrondingBalk = 3;
   noStroke();

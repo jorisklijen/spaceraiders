@@ -1,5 +1,6 @@
 final int KNOP__ = 10;
-final int PORTAL = 11;
+final int PORTL0 = 7;
+final int PORTL1 = 8;
 
 final int MUNT__ = 12;
 final int DIAMAN = 13;
@@ -87,9 +88,13 @@ final int GET_RANDOM() {
 final int GET_KNOP__() {
   return KNOP__;
 }
-final int GET_PORTAL() {
-  return PORTAL;
+final int GET_PORTL0() {
+  return PORTL0;
 }
+final int GET_PORTL1() {
+  return PORTL1;
+}
+
 final int GET_MUNT__() {
   return MUNT__;
 }
@@ -271,14 +276,18 @@ void tekenScene(int groote, int[][]scene) {
       case 6: 
         tekenImg(groote * rij, groote * colom, groote, getStekel4());
         break;
+      case 7: 
+        //onzichtbaar portaal
+        tekenImg(groote * rij, groote * colom, groote, getVloer());
+        break;
+      case 8: 
+        tekenImg(groote * rij, groote * colom, groote, getPortaal());
+        break;
       case 2: 
         // random element raider of coin.
         break;
       case 10: 
         tekenImg(groote * rij, groote * colom, groote, getKnop());
-        break;
-      case 11: 
-        tekenImg(groote * rij, groote * colom, groote, getPortaal());
         break;
       case 12: 
         tekenImg(groote * rij, groote * colom, groote, geTMunt());

@@ -1,5 +1,5 @@
-boolean startScherm = false;
-boolean gameScherm = true;
+boolean startScherm = true;
+boolean gameScherm = false;
 boolean eindScherm = false;
 boolean hiscoreScherm = false;
 
@@ -28,7 +28,7 @@ int[][][]scenes = {
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR17(), GET_MUUR0_(), GET_MUUR0_(), GET_MUUR0_(), GET_MUUR0_(), GET_MUUR0_(), GET_MUUR0_(), GET_MUUR0_(), GET_MUUR0_(), GET_MUUR0_(), GET_MUUR0_(), GET_MUUR0_(), GET_MUUR16()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_MUUR1_()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR1_()}, 
-    {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_LEEG_1(), GET_MUUR10(), GET_MUUR13(), GET_MUUR13(), GET_MUUR8_(), GET_PORTAL(), GET_MUUR10(), GET_MUUR13(), GET_MUUR13(), GET_MUUR13(), GET_MUUR13(), GET_MUUR20()}, 
+    {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_LEEG_1(), GET_MUUR10(), GET_MUUR13(), GET_MUUR13(), GET_MUUR8_(), GET_PORTL0(), GET_MUUR10(), GET_MUUR13(), GET_MUUR13(), GET_MUUR13(), GET_MUUR13(), GET_MUUR20()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_LEEG_1(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_LEEG_1(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_MUUR1_()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_KNOP__(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR1_()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR14(), GET_MUUR3_(), GET_MUUR3_(), GET_MUUR3_(), GET_MUUR3_(), GET_MUUR4_(), GET_LEEG_1(), GET_MUUR10(), GET_MUUR13(), GET_MUUR13(), GET_MUUR8_(), GET_LEEG_1(), GET_MUUR1_()}, 
@@ -40,7 +40,7 @@ int[][][]scenes = {
     // makkelijk level 2 
     {GET_LEEG_0(), GET_LEEG_0(), GET_LEEG_0(), GET_LEEG_0(), GET_MUUR17(), GET_MUUR0_(), GET_MUUR0_(), GET_MUUR0_(), GET_MUUR0_(), GET_MUUR0_(), GET_MUUR16(), GET_MUUR17(), GET_MUUR0_(), GET_MUUR0_(), GET_MUUR16()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_LEEG_0(), GET_MUUR17(), GET_MUUR7_(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_MUUR6_(), GET_MUUR7_(), GET_MUUR__(), GET_MUUR__(), GET_MUUR1_()}, 
-    {GET_LEEG_0(), GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_MUUR__(), GET_LEEG_1(), GET_LEEG_1(), GET_PORTAL(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR__(), GET_MUUR__(), GET_RANDOM(), GET_LEEG_1(), GET_MUUR1_()}, 
+    {GET_LEEG_0(), GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_MUUR__(), GET_LEEG_1(), GET_LEEG_1(), GET_PORTL0(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR__(), GET_MUUR__(), GET_RANDOM(), GET_LEEG_1(), GET_MUUR1_()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR17(), GET_MUUR7_(), GET_LEEG_1(), GET_RANDOM(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_RANDOM(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_RANDOM(), GET_MUUR1_()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_MUUR__(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR10(), GET_MUUR8_(), GET_Z_TANK(), GET_MUUR10(), GET_MUUR43(), GET_LEEG_1(), GET_STKEL1(), GET_MUUR1_()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR__(), GET_MUUR__(), GET_LEEG_1(), GET_MUUR__(), GET_MUUR9_(), GET_RANDOM(), GET_MUUR5_(), GET_MUUR15()}, 
@@ -58,7 +58,7 @@ int[][][]scenes = {
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_KNOP__(), GET_LEEG_1(), GET_MUUR__(), GET_RANDOM(), GET_MUUR1_()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_STKEL1(), GET_LEEG_1(), GET_MUUR45(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR5_(), GET_MUUR4_(), GET_RANDOM(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR1_()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR18(), GET_MUUR8_(), GET_Z_TANK(), GET_MUUR__(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR10(), GET_MUUR31(), GET_MUUR32(), GET_MUUR8_(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR1_()}, 
-    {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_MUUR__(), GET_LEEG_1(), GET_PORTAL(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_LEEG_1(), GET_MUUR5_(), GET_MUUR15()}, 
+    {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_MUUR__(), GET_LEEG_1(), GET_PORTL0(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_LEEG_1(), GET_MUUR5_(), GET_MUUR15()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_STKEL4(), GET_RANDOM(), GET_MUUR5_(), GET_MUUR4_(), GET_LEEG_1(), GET_RANDOM(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR1_(), GET_LEEG_0()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR14(), GET_MUUR3_(), GET_MUUR3_(), GET_MUUR15(), GET_MUUR14(), GET_MUUR3_(), GET_MUUR3_(), GET_MUUR3_(), GET_MUUR3_(), GET_MUUR3_(), GET_MUUR3_(), GET_MUUR15(), GET_LEEG_0()}, 
   }, 
@@ -66,7 +66,7 @@ int[][][]scenes = {
     // moeilijk level 4
     {GET_LEEG_0(), GET_LEEG_0(), GET_LEEG_0(), GET_LEEG_0(), GET_LEEG_0(), GET_MUUR17(), GET_MUUR0_(), GET_MUUR0_(), GET_MUUR0_(), GET_MUUR16(), GET_LEEG_0(), GET_MUUR17(), GET_MUUR0_(), GET_MUUR0_(), GET_MUUR16()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_LEEG_0(), GET_MUUR17(), GET_MUUR0_(), GET_MUUR7_(), GET_MUUR__(), GET_MUUR__(), GET_MUUR__(), GET_MUUR28(), GET_MUUR0_(), GET_MUUR7_(), GET_MUUR__(), GET_MUUR__(), GET_MUUR1_()}, 
-    {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR17(), GET_MUUR7_(), GET_MUUR__(), GET_MUUR__(), GET_LEEG_1(), GET_RANDOM(), GET_PORTAL(), GET_MUUR9_(), GET_MUUR__(), GET_MUUR__(), GET_RANDOM(), GET_LEEG_1(), GET_MUUR1_()}, 
+    {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR17(), GET_MUUR7_(), GET_MUUR__(), GET_MUUR__(), GET_LEEG_1(), GET_RANDOM(), GET_PORTL0(), GET_MUUR9_(), GET_MUUR__(), GET_MUUR__(), GET_RANDOM(), GET_LEEG_1(), GET_MUUR1_()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_MUUR__(), GET_LEEG_1(), GET_RANDOM(), GET_LEEG_1(), GET_MUUR10(), GET_MUUR8_(), GET_MUUR__(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR1_()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_STKEL4(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR__(), GET_MUUR__(), GET_LEEG_1(), GET_RANDOM(), GET_LEEG_1(), GET_KNOP__(), GET_MUUR10(), GET_MUUR20()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_STKEL4(), GET_Z_TANK(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR11(), GET_LEEG_1(), GET_MUUR__(), GET_MUUR1_()}, 
@@ -81,16 +81,17 @@ int[][][] getScenes() {
   return scenes;
 }
 
-
+void setScenes(int[][][] niewScene) {
+  scenes = niewScene;
+}
 
 int getScore() {
   return score;
 }
 
-void setScore(int aantal){
+void setScore(int aantal) {
   score = aantal;
 }
-
 
 int getSchaal() {
   return schaal;
@@ -110,6 +111,14 @@ void setStekels(boolean stekelStatus) {
 
 boolean getGameScherm() {
   return gameScherm;
+}
+
+boolean getStartSchrem(){
+ return startScherm; 
+}
+
+int getLevel() {
+  return level;
 }
 
 void setLevel(int huidiglevel) {
@@ -134,6 +143,7 @@ void setEindScherm(boolean resultaat) {
 
 void laadScene() {
   if (startScherm) {
+    startLoop(startScherm);
   } else if (gameScherm) {
     gameloop(schaal, level);
   } else if (eindScherm) {

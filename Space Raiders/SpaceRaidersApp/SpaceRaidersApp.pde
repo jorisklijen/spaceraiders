@@ -1,12 +1,14 @@
 int vensterBreete = 1500;
 int vensterHoogte = 1000;
-int fps = 60;
+int fps = 144;
 
 void settings() {
   size(vensterBreete, vensterHoogte);
 }
 
 void setup() {
+  surface.setResizable(true);
+  surface.setTitle("SPACE RAIDERS");
   laadAfbeeldingen();
   laadFond();
   frameRate(fps);
@@ -14,6 +16,8 @@ void setup() {
 
 void draw() {
   laadScene();
+  
+  //test levels
   if (key == '1' ){
    setLevel(1); 
   }
