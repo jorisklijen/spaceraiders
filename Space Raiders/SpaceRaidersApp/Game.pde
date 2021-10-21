@@ -5,57 +5,61 @@ final int KLEUR_ZUURSTOF_ACHTERGROND = #21252d;
 final int KLEUR_ZUURSTOF = #9bb4ed;
 final int KLEUR_TEXT = #D6FFFF;//#9bb4ed;
 
-int[][] levelStatus;
-
+void setGamestatus(boolean status) {
+  gamestatus = status;
+}
 void setGameGewonnen(boolean win) {
   gameGewonnen = win;
 }
 
-void gameloop(int groote, int level) {
+void gameloop(int groote, int level, int aantalSchatten, int score) {
   final int STARTPOSX = 13;
   final int STARTPOSY = 2;
-
-  tekenScene(groote, levelBerekeningen(getScenes()[level], getAantalSchatten(), getStekels(), GET_RANDOM(), GET_MUNT__(), GET_DIAMAN(), GET_B_RAID(), GET_LEEG_1()));
+  //gamestatus = getSpelerLevend();
+  tekenScene(groote, levelBerekeningen(getScenes()[level], getSchatten()[aantalSchatten], getStekels(), GET_RANDOM(), GET_MUNT__(), GET_DIAMAN(), GET_B_RAID(), GET_LEEG_1()));
   switch (int(!gamestatus || gameGewonnen)) {
   case 0:
     //levend
+    doodSpeler(getScenes()[level], GET_STKEL1(), GET_STKEL2(), GET_STKEL3(), GET_STKEL4());
     zuurstofAfname();
     tekenSpeler(getSpeler1(), getXPosSpeler() * groote, getYPosSpeler() * groote, groote, KLEUR_ZUURSTOF_ACHTERGROND, KLEUR_ZUURSTOF, getZuurstof());
+    telScore(getScenes(), level, getXPosSpeler(), getYPosSpeler(), GET_MUNT__(), GET_DIAMAN(), score, GET_LEEG_1(), GET_B_RAID());
+    extraZuurstof(getScenes(), level, getXPosSpeler(), getYPosSpeler(), GET_Z_TANK(),GET_LEEG_1());
     portaalTeleportatie(getScenes()[level], getXPosSpeler(), getYPosSpeler(), GET_PORTL1(), STARTPOSX, STARTPOSY);
     beweegSpeler(getScenes()[level]);
     drukOpKnop(getScenes(), level, getXPosSpeler(), getYPosSpeler(), GET_KNOP__(), GET_PORTL0(), GET_PORTL1(), GET_LEEG_1());
-    telScore(getScenes(), level, getXPosSpeler(), getYPosSpeler(), GET_MUNT__(), GET_DIAMAN(), getScore(), GET_LEEG_1(), GET_B_RAID());
-    tekenScore(getScore(), 20, 20, KLEUR_TEXT, getSpaceFond(), groote);
+
     break;
   case 1:
     // dood of game over 
     if (gamestatus == false) {
-      // speler is dood
+      setStatus(1);
+      setGameScherm(false);
+      setEindScherm(true);
+      setLevel(0);
       // eind schrem met score + text dat speler het niet gehaald heeft.
-    } 
-    // gewonnen
-    else if (gameGewonnen == true) {
-      // speler heefthet spel gehaald
-      // eind schrem met score + text dat de speler alle levels gehaald heeft en ondsnapt is uit het level
+    } else if (gameGewonnen == true) {
+      setStatus(0);
+      setGameScherm(false);
+      setEindScherm(true);
+      setLevel(0);
     }
-    // 3d arry weer terug zetten naar origineele voor het overniew spelen
     break;
   default:
-    println("ERROR " + gamestatus); // hoort hier nooit te komen als het goed is.
+    println("ERROR " + gamestatus); // hoort hier nooit te komen.
     break;
   }
   tekenScore(getScore(), 20, 20, KLEUR_TEXT, getSpaceFond(), groote);
 }
 
-// void van maaken array er inlaten en de posietes verwisselen.
-int[][] levelBerekeningen(int[][] level, int aantal, boolean stekelsaan, int randomPos, int munt, int diamant, int badRaider, int leeg) {
+//laten en de posietes verwisselen.
+int[][] levelBerekeningen(int[][] level, int hoeveelhijd, boolean stekelsaan, int randomPos, int munt, int diamant, int badRaider, int leeg) {
   for (int i =0; i < level.length; i++) {
     for (int j = 0; j < level[i].length; j++) {
-      for (int a = 0; a < aantal; a++) {
-        if (level[i][j] == randomPos && a < aantal) {
+      for (int h = 0; h <= hoeveelhijd; h++) {
+        if (level[i][j] == randomPos && h <= hoeveelhijd) {
           switch(int(random(4))) {
           case 0:
-            //hier iets van een set?
             level[i][j] = badRaider;
             break;
           case 1:

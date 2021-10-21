@@ -3,10 +3,12 @@ boolean gameScherm = false;
 boolean eindScherm = false;
 boolean hiscoreScherm = false;
 
+int aantalSpelers = 1;
 int level = 0;
 int schaal = 100;
 int score = 0;
-int aantaShatten = 1;
+int[] shatten = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+int aantalSchatten = 1;
 boolean stekels = true;
 
 int[][][]scenes = {
@@ -44,7 +46,7 @@ int[][][]scenes = {
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR17(), GET_MUUR7_(), GET_LEEG_1(), GET_RANDOM(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_RANDOM(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_RANDOM(), GET_MUUR1_()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_MUUR__(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR10(), GET_MUUR8_(), GET_Z_TANK(), GET_MUUR10(), GET_MUUR43(), GET_LEEG_1(), GET_STKEL1(), GET_MUUR1_()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR__(), GET_MUUR__(), GET_LEEG_1(), GET_MUUR__(), GET_MUUR9_(), GET_RANDOM(), GET_MUUR5_(), GET_MUUR15()}, 
-    {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_RANDOM(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_KNOP__(), GET_MUUR__(), GET_LEEG_1(), GET_MUUR1_(), GET_LEEG_0()}, 
+    {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_STKEL4(), GET_LEEG_1(), GET_LEEG_1(), GET_RANDOM(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_KNOP__(), GET_MUUR__(), GET_LEEG_1(), GET_MUUR1_(), GET_LEEG_0()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_RANDOM(), GET_MUUR5_(), GET_MUUR4_(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_LEEG_1(), GET_MUUR1_(), GET_LEEG_0()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR2_(), GET_STKEL1(), GET_MUUR1_(), GET_MUUR2_(), GET_LEEG_1(), GET_LEEG_1(), GET_RANDOM(), GET_LEEG_1(), GET_MUUR5_(), GET_MUUR3_(), GET_MUUR3_(), GET_MUUR15(), GET_LEEG_0()}, 
     {GET_LEEG_0(), GET_LEEG_0(), GET_MUUR14(), GET_MUUR3_(), GET_MUUR15(), GET_MUUR14(), GET_MUUR3_(), GET_MUUR3_(), GET_MUUR3_(), GET_MUUR3_(), GET_MUUR15(), GET_LEEG_0(), GET_LEEG_0(), GET_LEEG_0(), GET_LEEG_0()}, 
@@ -97,8 +99,8 @@ int getSchaal() {
   return schaal;
 }
 
-int getAantalSchatten() {
-  return aantaShatten;
+int[] getSchatten() {
+  return shatten;
 }
 
 boolean getStekels() {
@@ -113,8 +115,8 @@ boolean getGameScherm() {
   return gameScherm;
 }
 
-boolean getStartSchrem(){
- return startScherm; 
+boolean getStartSchrem() {
+  return startScherm;
 }
 
 int getLevel() {
@@ -133,19 +135,16 @@ void setStartScherm(boolean resultaat) {
   startScherm = resultaat ;
 }
 
-void sethiscoreScherm(boolean resultaat) {
-  hiscoreScherm = resultaat ;
-}
-
 void setEindScherm(boolean resultaat) {
   eindScherm = resultaat ;
 }
 
 void laadScene() {
   if (startScherm) {
-    startLoop(startScherm);
+    startLoop(startScherm, schaal, level, aantalSchatten, aantalSpelers);
   } else if (gameScherm) {
-    gameloop(schaal, level);
+    gameloop(schaal, level, aantalSchatten, score);
   } else if (eindScherm) {
+    eindLoop(schaal, level, score);
   }
 }

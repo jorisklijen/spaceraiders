@@ -1,5 +1,3 @@
-
-
 void portaalTeleportatie(int level[][], int spelerX, int spelerY, int portaal, int startposX, int startposY) {
   if (level[spelerY][spelerX] == portaal) {
     println();
@@ -14,7 +12,7 @@ void nextLevel(int level, int x, int y) {
     setLevel(level + 1);
     setZuurstof(0.6);
   } else {
-    
-    setLevel(0);
+    //game gewonnen!
+    setGameGewonnen(true);
   }
 }

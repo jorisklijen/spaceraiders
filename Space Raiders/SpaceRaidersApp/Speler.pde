@@ -1,4 +1,4 @@
-int spelerSnelheid = 1; //<>//
+int spelerSnelheid = 1; //<>// //<>//
 int xPosSpeler = 13;
 int yPosSpeler = 2;
 boolean spelerLevend = true;
@@ -25,11 +25,7 @@ float getZuurstof() {
   return zuurstof;
 }
 
-boolean getSpelerLevend() {
-  return spelerLevend;
-}
 void beweegSpeler(int[][] level) {
-
 
   if (keyPressed) {
   } else { 
@@ -37,35 +33,9 @@ void beweegSpeler(int[][] level) {
     //************************************************
     //||  oude code bewegen nog een bug dat         || 
     //||  er meerdere inputs gegeven kunnen worden  ||
+    //||  met een if else nogsteeds het zelfde      || 
     //||   -joris de kleijn 20/10/2021              ||
     //************************************************
-    //if (key == 'p') {
-    //  println("deze zorgt er voor dat er geen prio is bij het beweegen");
-    //} else if (key == 'w' && level[yPosSpeler - 1][xPosSpeler] > 0 && beweegt == false) {
-    //  beweegt = true;
-    //  yPosSpeler = yPosSpeler - spelerSnelheid;
-    //  if(level[yPosSpeler - 1][xPosSpeler] <= 0){
-    //    beweegt = false;
-    //  }
-    //} else if (key == 's' && level[yPosSpeler + 1][xPosSpeler] > 0 && beweegt == false) {
-    //  beweegt = true;
-    //  yPosSpeler = yPosSpeler + spelerSnelheid;
-    //  if(level[yPosSpeler + 1][xPosSpeler] <= 0){
-    //    beweegt = false;
-    //  }
-    //} else if (key == 'a' && level[yPosSpeler][xPosSpeler - 1] > 0 && beweegt == false) {
-    //  beweegt = true;
-    //  xPosSpeler = xPosSpeler - spelerSnelheid;
-    //  if(level[yPosSpeler][xPosSpeler - 1] <= 0){
-    //    beweegt = false;
-    //  }
-    //} else if (key == 'd' && level[yPosSpeler][xPosSpeler + 1] > 0 && beweegt == false) {
-    //  beweegt = true;
-    //  xPosSpeler = xPosSpeler + spelerSnelheid;
-    //  if(level[yPosSpeler][xPosSpeler + 1] <= 0){
-    //    beweegt = false;
-    //  }
-    //}
 
     switch (key) {
     case 'w':
@@ -100,6 +70,15 @@ void beweegSpeler(int[][] level) {
       }
       break;
     }
+  }
+}
+
+void doodSpeler(int[][] level, int stekel1, int stekel2, int stekel3, int stekel4) {
+  if (zuurstof <= 0) {
+    setGamestatus(false);
+  }
+  if (level[yPosSpeler][xPosSpeler] == stekel1 || level[yPosSpeler][xPosSpeler] == stekel2 || level[yPosSpeler][xPosSpeler] == stekel3 || level[yPosSpeler][xPosSpeler] ==  stekel4) {
+    setGamestatus(false);
   }
 }
 

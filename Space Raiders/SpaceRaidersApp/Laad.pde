@@ -64,7 +64,16 @@ PImage muur43;
 PImage muur44;
 PImage muur45;
 
+PImage fade;
+
+PImage getFade() {
+  return fade;
+}
+
 PFont spaceFond;
+PFont menuFont;
+PFont bloedFont;
+
 PImage getSpeler1() {
   return speler1;
 }
@@ -257,8 +266,18 @@ PFont getSpaceFond() {
   return spaceFond;
 }
 
+PFont getMenuFont() {
+  return menuFont;
+}
+
+PFont getBloedFont() {
+  return bloedFont;
+}
+
 void laadFond() {
   spaceFond = createFont("space.otf", 8);
+  menuFont = createFont("menuFont.otf", 16);
+  bloedFont = createFont("bloedFont.otf", 16);
 }
 
 void laadAfbeeldingen() {
@@ -278,6 +297,8 @@ void laadAfbeeldingen() {
   stekel2 = loadImage("spike2.png");
   stekel3 = loadImage("spike3.png");
   stekel4 = loadImage("spike4.png");
+
+  fade = loadImage("fade.png");
 
   space = loadImage("alt_space2.png");
   vloer = loadImage("vloer.png");
