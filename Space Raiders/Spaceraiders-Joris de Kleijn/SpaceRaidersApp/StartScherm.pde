@@ -33,6 +33,7 @@ void startLoop(boolean startScherm, int groote, int level, int aantalSchatten, i
         && mouseY >= height / 2 - (height / 10) + knopSpacing * 2 && mouseY <= height / 2 - (height / 10) + knopSpacing * 2 + knopHoogte) {
         setLevel(1);
         setScore(0);
+        setZuurstof(0.6);
         setScenes(kopieScenes);
         setXPosSpeler(13);
         setYPosSpeler(2);

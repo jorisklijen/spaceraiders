@@ -4,7 +4,6 @@ int yPosSpeler = 2;
 boolean spelerLevend = true;
 float zuurstof = 0.5f;
 float zuurstofVerbruik = 0.0025f;
-boolean beweegt = false;
 int getXPosSpeler() {
   return xPosSpeler;
 }
@@ -27,49 +26,37 @@ float getZuurstof() {
 
 void beweegSpeler(int[][] level) {
 
-  if (keyPressed) {
-  } else { 
+  //if (keyPressed) {
+  //} else { 
 
-    //************************************************
-    //||  oude code bewegen nog een bug dat         || 
-    //||  er meerdere inputs gegeven kunnen worden  ||
-    //||  met een if else nogsteeds het zelfde      || 
-    //||   -joris de kleijn 20/10/2021              ||
-    //************************************************
+  //************************************************
+  //||  oude code bewegen nog een bug dat         || 
+  //||  er meerdere inputs gegeven kunnen worden  ||
+  //||  met een if else nogsteeds het zelfde      || 
+  //||   -joris de kleijn 20/10/2021              ||
+  //************************************************
 
-    switch (key) {
-    case 'w':
-      if (level[yPosSpeler - 1][xPosSpeler] > 0 ) {
-        yPosSpeler = yPosSpeler - spelerSnelheid;
-      }
-      break;
-    case 's':
-      if (level[yPosSpeler + 1][xPosSpeler] > 0 ) {
-        beweegt = true;
-        yPosSpeler = yPosSpeler + spelerSnelheid;
-      } else {
-        beweegt = false;
-      }
-      break;
-    case 'a':
-      if (level[yPosSpeler][xPosSpeler - 1] > 0 ) {
-        beweegt = true;
-        xPosSpeler = xPosSpeler - spelerSnelheid;
-      } else {
-        beweegt = false;
-      }
-      break;
-    case 'd':
-      if (level[yPosSpeler][xPosSpeler + 1] > 0 ) {
-        xPosSpeler = xPosSpeler + spelerSnelheid;
-      }
-      break;
-    default: 
-      if (key == 'W' || key == 'S' || key == 'A' || key =='D') {
-        println("capslock staat aan! " + key);
-      }
-      break;
+  switch (keyCode) {
+  case UP:
+    if (level[yPosSpeler - 1][xPosSpeler] > 0 ) {
+      yPosSpeler = yPosSpeler - spelerSnelheid;
     }
+    break;
+  case DOWN:
+    if (level[yPosSpeler + 1][xPosSpeler] > 0 ) {
+      yPosSpeler = yPosSpeler + spelerSnelheid;
+    }
+    break;
+  case LEFT:
+    if (level[yPosSpeler][xPosSpeler - 1] > 0 ) {
+      xPosSpeler = xPosSpeler - spelerSnelheid;
+    } 
+    break;
+  case RIGHT:
+    if (level[yPosSpeler][xPosSpeler + 1] > 0 ) {
+      xPosSpeler = xPosSpeler + spelerSnelheid;
+    }
+    break;
   }
 }
 
